@@ -1,59 +1,30 @@
-#include <iostream>
+//C++ program returns the input number if the number is even
+// If the number is odd returns ((temp * 3) + 1);
+#include<iostream>
 
 using namespace std;
 
-int  const maxn = 10;
-int n;
-float A[maxn], B[maxn], C[maxn];
-void ReadArray(float M[maxn], int n)
+int printSth(int a)
 {
-	int i;
-	cout << "ReadArray: " << "\n";
-	for (i = 0; i < n ; i++)
+	int temp = a;
+	if ((a > 0) && ((a % 2) == 0))
 	{
-		cout << "Input M[" << i << "]=";
-		cin >> M[i];
+		return temp;
+
 	}
-}
-void WriteArray(float M[maxn], int n)
-{
-	int i;
-	cout << "WriteArray: " << "\n";
-	for (i = 0; i <= n - 1; i++)
-		cout << "Input M[" << i << "]=" << M[i] << "\n";
-}
-void Boublesort(float M[maxn], int n)
-{
-	int i, j;
-	cout << "Boublesort: " << "\n";
-	float R;
-	for (i = n; i >= 2; i--)
+	else
 	{
-		for (j = 0; j <= i - 2; j++)
-			if (M[j] > M[j + 1])
-			{
-				R = M[j];
-				M[j] = M[j + 1];
-				M[j + 1] = R;
-			}
+		return ((temp * 3) + 1);
 	}
+
 }
+
 int main()
 {
-	cout << endl;
-	ReadArray(A, 6);
-	Boublesort(A, 6);
-	WriteArray(A, 6);
-
-	cout << endl;
-	
-	ReadArray(B, 10);
-	Boublesort(B, 10);
-	WriteArray(B, 10);
-
-	cout << endl;
-	ReadArray(C, 8);
-	Boublesort(C, 8);
-	WriteArray(C, 8);
+	int n, result;
+	cout << "Enter number to be checked: ";
+	cin >> n;
+	result = printSth(n);
+	cout << "The result is: " << result << endl << "Done\n";
 	return 0;
 }
